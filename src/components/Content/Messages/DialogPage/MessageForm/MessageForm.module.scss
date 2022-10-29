@@ -1,0 +1,17 @@
+.field {
+  margin-top: 5px;
+
+  textarea {
+    resize: none;
+    outline: none;
+    overflow: hidden;
+
+    border-radius: 6px;
+
+    width: 93%;
+    height: 25px;
+
+    padding-left: 7px;
+    line-height: 1.85em;
+  }
+}

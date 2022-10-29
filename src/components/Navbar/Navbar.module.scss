@@ -1,0 +1,18 @@
+.container {
+  grid-area: 2 / 3 / 4 / 5;
+  background-color: #c2c248;
+  padding: 10px;
+  font-size: 1.2em;
+}
+
+.item {
+  color: #d2cce7;
+}
+
+.active {
+  color: #23233d;
+}
+
+.friends {
+  font-size: 1.4em;
+}
