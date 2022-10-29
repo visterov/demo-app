@@ -43,6 +43,7 @@ const LoginForm = (props) => {
                 {errors?.login && <div className={scss.errors}>{errors.login.message}</div>}
                 <div>
                     <button>Send</button>
+                    Avaible logins: vistai, admin, j.heaton, cooldrake, j.mathis, e.plumer, smith1987
                 </div>
             </form>
         </div>
