@@ -2,7 +2,7 @@ import axios from "axios";
 
 const instance = axios.create({
     withCredentials: true,
-    baseURL: 'http://localhost:5000/api/1.0/',
+    baseURL: 'https://react-social-vi.herokuapp.com/api/1.0/',
     headers: {
         'Access-Control-Allow-Credentials': true,
     }
