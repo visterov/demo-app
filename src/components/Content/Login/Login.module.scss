@@ -31,7 +31,7 @@
 
   button {
     margin-top: 1%;
-    background-color: #1877f2;
+    background-color: #C3073F;
     border: none;
     border-radius: 6px;
     font-size: 20px;
@@ -43,5 +43,11 @@
     box-sizing: content-box;
     cursor: pointer;
     font-weight: bold;
+  }
+
+  .logins {
+    text-align: center;
+    font-size: 0.8em;
+    margin-top: 3px;
   }
 }

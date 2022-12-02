@@ -10,6 +10,9 @@ const Login = (props) => {
         <div className={scss.container}>
             <div className={scss.logo}>Login</div>
             <LoginForm login={props.login}/>
+            <div className={scss.logins}>
+                Available logins: vistai, admin, j.heaton, cooldrake, j.mathis, e.plumer, smith1987
+            </div>
         </div>
     );
 }
@@ -43,7 +46,6 @@ const LoginForm = (props) => {
                 {errors?.login && <div className={scss.errors}>{errors.login.message}</div>}
                 <div>
                     <button>Send</button>
-                    Avaible logins: vistai, admin, j.heaton, cooldrake, j.mathis, e.plumer, smith1987
                 </div>
             </form>
         </div>
