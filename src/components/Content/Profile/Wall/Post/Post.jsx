@@ -11,7 +11,7 @@ const Post = (props) => {
             <span className={scss.message}>{props.message}</span>
             <div className={scss.likes}>
                 <div className={scss.likesCount}>{props.likesCount} </div>
-                <div className={scss.likesIcon}><img src="/heart.svg" alt="like_icon" width={"20px"}/></div>
+                <div className={scss.likesIcon}><img src={'/demo-app/heart.svg'} alt="like_icon" width={"20px"}/></div>
             </div>
         </div>
     );
