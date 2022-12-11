@@ -1,6 +1,6 @@
 import {getAuthUserData} from "./auth-reducer";
 
-const INITIALIZED_SUCCESS = 'INITIALIZED-SUCCESS';
+const INITIALIZED_SUCCESS = 'react_social/app/INITIALIZED_SUCCESS';
 
 let initialState = {
     initialized: false
@@ -25,10 +25,10 @@ export const initializedSuccess = () => {
     }
 }
 
-export const initializeApp = () => (dispatch) => {
+export const initializeApp = () => async (dispatch) => {
     let authPromise = dispatch(getAuthUserData());
 
-    Promise.all([authPromise]).then(() => {
+    await Promise.all([authPromise]).then(() => {
         dispatch(initializedSuccess());
     })
 }

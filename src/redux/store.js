@@ -25,7 +25,7 @@ export let users = [
         id: 3,
         name: `Alex`,
         surname: `Drake`,
-        avatar: `https://sticker-collection.com/stickers/plain/johnnysinsbrazzers/512/c912f70a-f67f-4fe1-af3c-10b5c590047ffile_368359.webp`
+        avatar: `https://i.imgur.com/uoOpu4n.png`
     },
     {
         id: 4,

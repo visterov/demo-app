@@ -2,6 +2,7 @@ import scss from './LastFriendsItem.module.scss'
 
 const LastFriendsItem = (props) => {
     let name = (props.name.length > 6) ? `${props.name.slice(0,6)}...` : props.name;
+    console.log(props.avatar);
 
     return (
         <figure className={scss.last_friends_item}>

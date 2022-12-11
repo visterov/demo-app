@@ -9,18 +9,38 @@ import {compose} from "redux";
 let mapStateToProps = (state) => {
     return {
         dialogsElements: state.dialogs.dialogsArray.map((item) => {
+            const [interlocutorData] = item.members.filter(i => i.id !== state.auth.userId);
+            const [currentUserData] = item.members.filter(i => i.id === state.auth.userId);
+
+            const [lastMessageObject] = item.messages.slice(-1);
+
+            const lastMessageContent = lastMessageObject.content;
+            const lastMessageAvatar = (lastMessageObject.authorId === state.auth.userId)
+                ? currentUserData.avatar
+                : false;
+
             return <DialogItem
-                username={`${item.author.name} ${item.author.surname}`}
-                avatar={item.author.avatar}
-                key={item.id}
-                id={item.id}/>
+                username={`${interlocutorData.name} ${interlocutorData.surname}`}
+                avatar={interlocutorData.avatar}
+                key={interlocutorData.id}
+                id={item.dialogId}
+                lastMessage={lastMessageContent}
+                lastMessageAvatar={lastMessageAvatar}
+            />
         }),
         dialogsPage: state.dialogs.dialogsArray.map((item) => {
-            return <Route path={`/${item.id}/`}
+            const [{avatar, name, surname, id}] = item.members.filter(i => i.id !== state.auth.userId);
+
+            return <Route path={`/${item.dialogId}/`}
+                          key={item.dialogId}
                           element={<DialogPage
-                              dialogId={item.id}
+                              username={`${name} ${surname}`}
+                              avatar={avatar}
+                              interlocutorId={id}
+                              dialogId={item.dialogId}
+                              userId={state.auth.userId}
                               messages={item.messages}
-                              key={item.id}/>}/>
+                              key={item.dialogId}/>}/>
         }),
     }
 };
